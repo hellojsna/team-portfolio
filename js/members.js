@@ -1,7 +1,7 @@
 const MEMBERS = [
     {
         name: "나지성",
-        photo: "./images/members/jiseong.jpg",
+        photo: "./images/members/jiseong.png",
         roleShort: "메인 페이지 · 내비게이션 · 배포",
         role: "메인 페이지 제작, 공통 메뉴 및 내비게이션 제작, 웹 접근성 개선, GitHub 저장소 관리, GitHub Pages 배포",
         github: "hellojsna",
@@ -10,7 +10,7 @@ const MEMBERS = [
     },
     {
         name: "양한세",
-        photo: "./images/members/hanse.jpg",
+        photo: "./images/members/hanse.png",
         roleShort: "팀 소개 · 프로필 · FAQ · 검색/필터",
         role: "팀원 프로필 제작, 팀 소개 페이지 제작, FAQ 페이지 제작, 프로젝트 검색·필터 기능",
         github: "didgkstp",
@@ -19,7 +19,7 @@ const MEMBERS = [
     },
     {
         name: "이은서",
-        photo: "./images/members/eunseo.jpg",
+        photo: "./images/members/eunseo.png",
         roleShort: "갤러리 · 문의 · 반응형 · JS",
         role: "프로젝트 갤러리 제작, 연락처 및 문의 기능 제작, README 작성, 반응형 웹 디자인, JavaScript 인터랙션 구현",
         github: "helloeunseo",
@@ -28,7 +28,7 @@ const MEMBERS = [
     },
     {
         name: "이규원",
-        photo: "./images/members/kyuwon.jpg",
+        photo: "./images/members/kyuwon.png",
         roleShort: "테스트 · 이미지/아이콘 · 발표자료",
         role: "사용성 및 화면 테스트, 이미지 및 아이콘 관리, 기타 개선 기능, 발표자료 제작",
         github: "leekyu9774",
