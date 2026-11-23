@@ -1,0 +1,134 @@
+/* 팀 소개 페이지 전용 스타일 (키 컬러: #48B99B) */
+
+.about-page {
+    min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    /* 하단 고정 nav 높이(약 80px)와 겹치지 않도록 하단 여백 확보 */
+    padding: 48px 32px 130px;
+    box-sizing: border-box;
+}
+
+/* 상단 영역: 좌측 상단 타이틀 + 중앙 목표/소개 */
+.about-hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    min-height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page-label {
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    font-weight: 700;
+    color: #48b99b;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+}
+
+.about-hero-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 24px 0 64px;
+}
+
+.about-goal {
+    font-size: clamp(1.4rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffffff;
+    max-width: 780px;
+}
+
+.about-intro {
+    font-size: clamp(1.05rem, 2vw, 1.45rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: #d4d4d4;
+    max-width: 720px;
+}
+
+/* 하단 영역: 상세 내용 및 푸터 영역 */
+.about-detail-section {
+    max-width: 1120px;
+    margin: 48px auto 0;
+    padding-top: 48px;
+    border-top: 1px solid #222222;
+}
+
+.about-detail-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #48b99b;
+    margin-bottom: 24px;
+}
+
+.about-detail-content {
+    background-color: #0d0d0d;
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 36px 28px;
+    color: #e5e5e5;
+    line-height: 1.75;
+}
+
+.about-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.about-value-card {
+    background-color: #121212;
+    border: 1px solid #262626;
+    border-radius: 10px;
+    padding: 22px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-value-card:hover {
+    border-color: #48b99b;
+    transform: translateY(-2px);
+}
+
+.about-value-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #48b99b;
+    margin-bottom: 10px;
+}
+
+.about-value-card p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.about-footer {
+    max-width: 1120px;
+    margin: 72px auto 0;
+    padding: 28px 20px;
+    background-color: #161616;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    text-align: center;
+    color: #9a9a9a;
+    font-size: 0.9rem;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 600px) {
+    .about-page {
+        padding: 32px 20px 120px;
+    }
+
+    .about-detail-content {
+        padding: 24px 18px;
+    }
+}
