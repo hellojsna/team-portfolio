@@ -15,35 +15,35 @@ const projects = [
 
     {
         number: "20263547 이규원 PROJECT",
-        title: "재고 관리 시스템",
-        subtitle: "제품의 재고 현황을 관리하는 프로그램",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1000",
-        description: "제품의 입출고와 재고 현황을 효율적으로 관리하기 위한 프로젝트입니다.",
-        intro: "제품의 수량과 정보를 관리하고 재고 현황을 쉽게 파악할 수 있도록 제작했습니다.",
-        features: "• 제품 정보 등록 및 조회\n• 재고 수량 관리\n• 입출고 내역 확인\n• 재고 현황 관리",
-        tech: ["Python", "CSV", "Streamlit"],
-        url: ""
+        title: "포커스 투두",
+        subtitle: "할 일을 고르고 포모도로 타이머로 한 판씩 끝내는 집중 관리 프로그램",
+        image: "images/20263547.png",
+        description: "할 일을 선택하고 포모도로 타이머로 한 판씩 끝내며 집중 횟수를 기록할 수 있도록 만든 집중 관리 웹 프로젝트입니다.",
+        intro: "할 일 목록과 25분 집중, 5분 휴식 타이머를 한 화면에 합친 웹 서비스입니다. 집중할 작업을 지정하면 타이머가 끝날 때마다 그 작업에 집중 횟수가 쌓이도록 기획했습니다.",
+        features: "• 할 일 추가·완료·삭제 및 상태별 필터(전체/진행중/완료)\n• 포모도로 타이머(집중 25분·짧은 휴식 5분·긴 휴식 15분) 및 종료 알림음\n• 작업별·오늘 집중 횟수 자동 기록 및 브라우저 저장(localStorage)\n• 라이트·다크 모드 자동 대응 및 모바일 반응형 지원",
+        tech: ["HTML", "CSS", "JavaScript"],
+        url: "https://tubular-sfogliatella-a7c8d8.netlify.app/"
     },
 
     {
         number: "20263548 이은서 PROJECT",
         title: "행복 도서관 웹 사이트",
         subtitle: "도서 검색과 신간·인기 도서 정보를 제공하는<br>도서관 웹 서비스",
-        image: "20263548.png",
+        image: "images/20263548.png",
         description: "원하는 도서를 빠르게 검색하고 신간 및 인기 도서 정보를 한눈에 확인할 수 있도록 만든 도서관 웹 프로젝트입니다.",
         intro: "사용자가 도서명·저자·출판사로 자료를 검색하고, 이달의 신간 도서와 국내·해외 도서 순위를 편리하게 탐색할 수 있도록 구성한 웹 서비스입니다.",
         features: "• 도서명·저자·출판사 기반 자료 검색\n• 이달의 신간 및 추천 도서 소개\n• 국내·해외 도서 인기 순위(1~5위) 제공\n• 다크모드 전환 및 로그인·회원가입 기능",
         tech: ["HTML", "CSS", "JavaScript"],
-        url: "" // 연결할 주소 입력 (예: "./book.html" 또는 "https://...")
+        url: "https://dldmstj206-ai.github.io/book/book.html"
     },
 
     {
         number: "20263550 이준모 PROJECT",
-        title: "AI 이미지 분석",
-        subtitle: "인공지능을 활용한 이미지 분석 프로젝트",
+        title: "oo프로젝트",
+        subtitle: "프로젝트에 대한 한줄소개",
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1000",
-        description: "인공지능 기술을 활용하여 이미지 데이터를 분석하는 프로젝트입니다.",
-        intro: "이미지 데이터를 입력받아 인공지능을 통해 특징을 분석하고 결과를 제공하는 것을 목표로 합니다.",
+        description: "~~~~~~~~~~~~~~~~~~~~~~~~ 프로젝트입니다.",
+        intro: "~~~~~~~~~~~~~~~~~~~~ 목표로 합니다.",
         features: "• 이미지 데이터 입력\n• 이미지 분석 처리\n• 분석 결과 출력\n• AI 기술 활용",
         tech: ["Python", "AI", "Machine Learning"],
         url: ""
@@ -51,26 +51,25 @@ const projects = [
 
     {
         number: "20263551 나지성 PROJECT",
-        title: "Clean House",
-        subtitle: "청소 서비스 정보 및 예약 플랫폼",
-        image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000",
-        description: "청소 서비스를 편리하게 이용할 수 있도록 기획한 플랫폼입니다.",
-        intro: "청소가 필요한 사용자와 청소 서비스를 연결하는 것을 목적으로 제작한 프로젝트입니다.",
-        features: "• 청소 서비스 종류 안내\n• 서비스 정보 확인\n• 예약 신청 기능\n• 사용자 중심의 화면 구성",
-        tech: ["HTML", "CSS", "JavaScript"],
-        url: ""
+        title: "TodayLunch",
+        subtitle: "손목에서 보는 오늘 급식 메뉴",
+        image: "images/20263552.png",
+        description: "Apple Watch 지원 급식 식단 정보 앱",
+        intro: "사용자가 앱을 직접 열지 않고도 Apple Watch나 홈 화면 위젯에서 오늘의 급식 메뉴를 빠르게 조회하고, 이미지·링크로 손쉽게 공유할 수 있도록 구성한 식단 정보 앱 서비스입니다.",
+        features: "•  전국 초등학교, 중학교, 고등학교 및 일본 일부 지역 학교의 급식 메뉴 확인\n•  Apple Watch에서 급식 메뉴 확인\n• 이미지 및 링크로 간편하게 공유\n• 위젯을 통해 앱 실행 없이 간편 조회",
+        tech: ["Swift, PHP, HTML, CSS, JavaScript"],
+        url: "https://apps.apple.com/kr/app/todaylunch/id6443977069"
     },
 
     {
         number: "20263553 양한세 PROJECT",
-        title: "포트폴리오 웹사이트",
-        subtitle: "개인 및 팀 프로젝트를 소개하는 웹사이트",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000",
-        description: "다양한 프로젝트와 개발 활동을 소개하기 위해 제작한 웹사이트입니다.",
-        intro: "팀과 개인의 프로젝트 결과물을 한곳에서 확인할 수 있도록 구성한 포트폴리오 웹사이트입니다.",
-        features: "• 프로젝트 갤러리 구성\n• 작품별 상세 정보 제공\n• 반응형 웹 디자인\n• 페이지 간 이동 기능",
-        tech: ["HTML", "CSS", "JavaScript"],
-        url: ""
+        title: "토스트 메이커",
+        subtitle: "핸드폰으로 즐길수있는 간단한 게임",
+        image: "images/20263553.jpg",
+        description: "들어오는 주문에 맞춰 재료를 굽고 조합해 토스트를 만들어 수익을 얻는 모바일 게임입니다.",
+        intro: "유니티를 사용하여 개발한 게임입니다. 들어오는 주문 내용에 맞게 재료를 굽고 조합하여 돈을 버는 것이 목표입니다.",
+        features: "• JSON을 활용한 게임 진행 상황 저장 및 이어하기\n• 클릭 앤 드래그(Click & Drag) 방식의 단순하고 직관적인 조작",
+        tech: ["Unity", "C#"],
     }
 
 ];
