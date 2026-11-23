@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 | Team Portfolio</title>
+    <style>
+        @import url("./css/common.css");
+        @import url("./css/members.css");
+    </style>
+</head>
+
+<body>
+    <main class="members-page">
+        <div class="members-container">
+            <h1 class="members-title">프로필</h1>
+
+            <section class="members-grid" id="membersGrid" aria-label="팀원 프로필 목록">
+                <!-- js/members.js에서 카드 렌더링 -->
+            </section>
+        </div>
+
+        <!-- 카드 클릭 시 상세 정보 모달 -->
+        <div class="member-modal" id="memberModal" aria-hidden="true">
+            <div class="member-modal-backdrop" id="modalBackdrop"></div>
+            <div class="member-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalName">
+                <button type="button" class="member-modal-close" id="modalClose" aria-label="닫기">✕</button>
+                <div class="member-modal-head">
+                    <div class="member-modal-photo-wrap" id="modalPhotoWrap"></div>
+                    <div>
+                        <h2 class="member-modal-name" id="modalName"></h2>
+                        <p class="member-modal-role" id="modalRole"></p>
+                    </div>
+                </div>
+                <p class="member-modal-bio" id="modalBio"></p>
+                <div class="member-modal-meta">
+                    <div class="member-modal-item">
+                        <h3>관심 분야 / 학습 목표</h3>
+                        <p id="modalGoal"></p>
+                    </div>
+                    <div class="member-modal-item">
+                        <h3>GitHub</h3>
+                        <p id="modalGithub"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="navigation"></nav>
+    <script src="js/nav.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/members.js"></script>
+</body>
+
+</html>
