@@ -1,0 +1,138 @@
+/*
+    activity.css
+    team-portfolio
+
+    Created by Js Na on 2026/11/24.
+
+    activity.html에 적용되는 스타일시트.
+*/
+
+body {
+    --page-padding: 5vw;
+    /* common.css의 공통 푸터가 이 padding을 뚫고 화면 끝까지 채워지도록 변수로 지정 */
+    padding: 0 var(--page-padding);
+    background: #000;
+    color: #fff;
+}
+
+.activity-header {
+    padding: 8rem 0 5rem;
+}
+
+.activity-header h1 {
+    color: #E5B64F;
+    /* nav.js의 활동 탭 색 */
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.activity-header p {
+    margin-top: 1rem;
+    color: #9a9a9a;
+    font-size: 1.125rem;
+}
+
+.activity-list {
+    padding-bottom: 120px;
+    /* 하단 메뉴바에 가려지지 않게 */
+}
+
+/* 날짜별 묶음. 왼쪽에 날짜, 오른쪽에 그날의 활동. */
+.activity-day {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 2rem;
+}
+
+.activity-day + .activity-day {
+    margin-top: 6rem;
+}
+
+.activity-date {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    color: #BFC0BF;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.activity-item + .activity-item {
+    margin-top: 5rem;
+}
+
+.activity-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.activity-text {
+    max-width: 40rem;
+    margin-top: 0.75rem;
+    color: #9a9a9a;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+/* 관련 Issue, PR 링크 */
+.activity-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+.activity-links a {
+    color: #9a9a9a;
+    text-decoration: none;
+}
+
+.activity-links a:hover,
+.activity-links a:focus-visible {
+    color: #fff;
+}
+
+/* PR에 올라왔던 화면 캡처 */
+.activity-shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.activity-shots img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #2a2a2a;
+    border-radius: 0.75rem;
+}
+
+/* 가로로 긴 이미지는 한 줄에 한 장 */
+.activity-shots-wide {
+    grid-template-columns: 1fr;
+}
+
+@media (max-width: 800px) {
+    .activity-day {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .activity-date {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        --page-padding: 6vw;
+    }
+
+    .activity-shots {
+        grid-template-columns: 1fr;
+    }
+}
