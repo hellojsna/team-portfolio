@@ -16,6 +16,11 @@
 }
 
 * {
+    /* 한글 단어 끊기는 줄바꿈 방지 */
+    word-break: keep-all;
+}
+
+html {
     /* 별도 서체 지정하지 않은 모든 요소의 기본 서체 Pretendard GOV로 지정 */
     font-family: "Pretendard GOV", sans-serif;
 }
@@ -69,9 +74,13 @@ a {
     /* 탭별 고유 색상은 nav.js에서 지정. */
 }
 
-/* 커스텀 커서 표시를 위해 기본 커서 숨기기 */
-body {
-    cursor: none;
+/* 커스텀 커서 표시를 위해 기본 커서 숨기기.
+   링크·버튼은 브라우저가, 갤러리 카드 등은 페이지 CSS가 cursor를 따로 지정하므로
+   모든 요소에 !important로 적용. (600px 이하는 커스텀 커서를 안 쓰므로 제외) */
+@media not all and (max-width: 600px) {
+    * {
+        cursor: none !important;
+    }
 }
 
 .custom-cursor {
@@ -108,10 +117,6 @@ body {
 }
 
 @media (max-width: 600px) {
-    body {
-        cursor: auto;
-    }
-
     .custom-cursor {
         display: none;
     }
