@@ -22,10 +22,36 @@
                 저희의 프로젝트를 소개합니다.<br>
                 각 작품을 클릭하면 자세한 내용을 확인할 수 있습니다.
             </p>
+
+            <section class="gallery-search" aria-label="작품 검색">
+                <form class="search-bar" id="searchForm" role="search">
+                    <div class="search-input-wrap">
+                        <input
+                            type="search"
+                            id="searchInput"
+                            class="search-input"
+                            placeholder="검색어를 입력하세요 (예: 토스트, 도서관, Unity, 양한세...)"
+                            autocomplete="off"
+                            aria-label="작품 검색어 입력"
+                        >
+                        <button type="button" class="search-clear-btn" id="clearBtn" aria-label="검색어 지우기">✕</button>
+                    </div>
+                    <button type="submit" class="search-submit-btn">검색</button>
+                </form>
+
+                <div class="tech-filter-bar" id="techFilterBar" aria-label="기술 스택 카테고리"></div>
+                <div class="search-meta">
+                    <span id="resultCount">전체 작품: 6건</span>
+                </div>
+            </section>
         </header>
 
         <!-- 작품 목록 -->
         <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+        <div class="search-empty" id="searchEmpty" hidden>
+            일치하는 작품이 없습니다. 다른 키워드나 기술 스택으로 검색해 보세요.
+        </div>
     </div>
 
     <!-- Footer 영역 -->

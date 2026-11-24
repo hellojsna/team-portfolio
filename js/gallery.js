@@ -171,3 +171,102 @@ document.addEventListener("keydown", (event) => {
         closeModal();
     }
 });
+
+
+// 작품 검색 및 기술 스택 카테고리 필터
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+const clearBtn = document.getElementById("clearBtn");
+const techFilterBar = document.getElementById("techFilterBar");
+const resultCount = document.getElementById("resultCount");
+const searchEmpty = document.getElementById("searchEmpty");
+const galleryCards = Array.from(galleryGrid.querySelectorAll(".gallery-card"));
+
+if (document.querySelector(".gallery-search") && searchInput && resultCount && searchEmpty) {
+    let selectedTech = "전체";
+    const techSet = new Set(["전체"]);
+
+    projects.forEach((project) => {
+        (project.tech || []).forEach((item) => {
+            String(item)
+                .split(",")
+                .forEach((tech) => {
+                    const cleanTech = tech.trim();
+                    if (cleanTech) techSet.add(cleanTech);
+                });
+        });
+    });
+
+    if (techFilterBar) {
+        techSet.forEach((tech) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "tech-filter-btn" + (tech === "전체" ? " is-active" : "");
+            button.textContent = tech;
+            button.addEventListener("click", () => {
+                selectedTech = tech;
+                techFilterBar.querySelectorAll(".tech-filter-btn").forEach((filterButton) => {
+                    filterButton.classList.toggle("is-active", filterButton === button);
+                });
+                filterProjects();
+            });
+            techFilterBar.appendChild(button);
+        });
+    }
+
+    function filterProjects() {
+        const rawQuery = searchInput.value.trim();
+        const query = rawQuery.toLowerCase();
+        let visibleCount = 0;
+
+        if (clearBtn) {
+            clearBtn.classList.toggle("is-visible", rawQuery.length > 0);
+        }
+
+        projects.forEach((project, index) => {
+            const card = galleryCards[index];
+            const normalizedTechs = (project.tech || []).flatMap((tech) =>
+                String(tech)
+                    .split(",")
+                    .map((item) => item.trim().toLowerCase())
+            );
+            const matchesTech =
+                selectedTech === "전체" ||
+                normalizedTechs.includes(selectedTech.toLowerCase());
+            const searchableText = [
+                project.number,
+                project.title,
+                project.subtitle,
+                project.description,
+                project.intro,
+                project.features,
+                normalizedTechs.join(" ")
+            ]
+                .join(" ")
+                .toLowerCase();
+            const isVisible = matchesTech && (!query || searchableText.includes(query));
+
+            card.style.display = isVisible ? "" : "none";
+            if (isVisible) visibleCount++;
+        });
+
+        resultCount.textContent =
+            rawQuery || selectedTech !== "전체"
+                ? `검색 결과: ${visibleCount}건`
+                : `전체 작품: ${visibleCount}건`;
+        searchEmpty.hidden = visibleCount > 0;
+    }
+
+    searchInput.addEventListener("input", filterProjects);
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        filterProjects();
+    });
+    clearBtn?.addEventListener("click", () => {
+        searchInput.value = "";
+        filterProjects();
+        searchInput.focus();
+    });
+
+    filterProjects();
+}

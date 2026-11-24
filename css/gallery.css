@@ -59,6 +59,129 @@ body {
     line-height: 1.7;
 }
 
+/* 검색 및 기술 스택 카테고리 */
+.gallery-search {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.search-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 42px 0 18px;
+    border: 1px solid var(--border-dark);
+    border-radius: 10px;
+    outline: none;
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-size: 0.98rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.search-input::placeholder {
+    color: #7c7c86;
+}
+
+.search-input:focus {
+    border-color: var(--accent);
+    background: #191618;
+}
+
+.search-clear-btn {
+    position: absolute;
+    right: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-sub);
+    cursor: pointer;
+}
+
+.search-clear-btn.is-visible {
+    display: inline-flex;
+}
+
+.search-clear-btn:hover {
+    background: #26262e;
+    color: var(--text-main);
+}
+
+.search-submit-btn {
+    height: 48px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #111;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tech-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-filter-btn {
+    padding: 7px 14px;
+    border: 1px solid var(--border-dark);
+    border-radius: 999px;
+    background: var(--bg-card);
+    color: #c8c8d0;
+    font-size: 0.84rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.tech-filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--text-main);
+}
+
+.tech-filter-btn.is-active {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #111;
+    font-weight: 700;
+}
+
+.search-meta {
+    color: var(--text-sub);
+    font-size: 0.9rem;
+}
+
+.search-empty {
+    margin-top: 22px;
+    padding: 44px 20px;
+    border: 1px dashed var(--border-dark);
+    border-radius: 12px;
+    background: var(--bg-card);
+    color: var(--text-sub);
+    text-align: center;
+}
+
 /* 작품 그리드 */
 .gallery-grid {
     display: grid;
@@ -323,6 +446,14 @@ body {
 
     .gallery-header h1 {
         font-size: 30px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-submit-btn {
+        width: 100%;
     }
 
     .gallery-card img {
