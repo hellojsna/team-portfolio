@@ -3,7 +3,6 @@
     --bg-main: #000000;
     --bg-card: #181818;
     --bg-modal: #141414;
-    --bg-footer: #161616;
     --border-dark: #282828;
     --text-main: #FFFFFF;
     --text-sub: #A3A3A3;
@@ -22,7 +21,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: 58px;
 }
 
 /* 전체 영역 */
@@ -259,16 +257,6 @@ body {
 
 .gallery-card:hover .view-more {
     color: var(--accent);
-}
-
-/* Footer 영역 */
-.site-footer {
-    background: var(--bg-footer);
-    border-top: 1px solid var(--border-dark);
-    padding: 28px 30px;
-    text-align: center;
-    color: var(--text-sub);
-    font-size: 13px;
 }
 
 /* 모달 배경 */
