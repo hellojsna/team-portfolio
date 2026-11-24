@@ -57,7 +57,7 @@ const projects = [
         description: "Apple Watch 지원 급식 식단 정보 앱",
         intro: "사용자가 앱을 직접 열지 않고도 Apple Watch나 홈 화면 위젯에서 오늘의 급식 메뉴를 빠르게 조회하고, 이미지·링크로 손쉽게 공유할 수 있도록 구성한 식단 정보 앱 서비스입니다.",
         features: "•  전국 초등학교, 중학교, 고등학교 및 일본 일부 지역 학교의 급식 메뉴 확인\n•  Apple Watch에서 급식 메뉴 확인\n• 이미지 및 링크로 간편하게 공유\n• 위젯을 통해 앱 실행 없이 간편 조회",
-        tech: ["Swift, PHP, HTML, CSS, JavaScript"],
+        tech: ["Swift", "PHP", "HTML", "CSS", "JavaScript"],
         url: "https://apps.apple.com/kr/app/todaylunch/id6443977069"
     },
 
