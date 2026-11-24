@@ -276,7 +276,6 @@ h1 {
     overflow-y: auto;
     border-radius: 16px;
     border: 1px solid var(--border-dark);
-    border-top: 4px solid var(--accent);
     position: relative;
     animation: showModal 0.25s ease;
 }
