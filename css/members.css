@@ -1,4 +1,4 @@
-/* 팀원 프로필 페이지 전용 스타일 (키 컬러: #A18AE8)[cite: 4, 12] */
+/* 팀원 프로필 페이지 전용 스타일 (키 컬러: #A18AE8) */
 
 .members-page {
     min-height: 100vh;
@@ -13,7 +13,7 @@
 
 .members-container {
     width: 100%;
-    max-width: 960px;
+    max-width: 1120px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -26,11 +26,11 @@
     letter-spacing: -0.02em;
 }
 
-/* 3열 그리드 -> 5명일 때 상단 3개, 하단 2개 배치[cite: 3, 12] */
+/* 4명 기준 4열 그리드 */
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
 }
 
 /* 세로형 카드 */
@@ -60,7 +60,7 @@
 /* 증명사진 비율 (3:4) */
 .member-photo-wrap {
     width: 100%;
-    max-width: 168px;
+    max-width: 164px;
     aspect-ratio: 3 / 4;
     border-radius: 8px;
     overflow: hidden;
@@ -97,13 +97,13 @@
 }
 
 .member-role-short {
-    font-size: 0.86rem;
+    font-size: 0.85rem;
     color: #b5b5bd;
     line-height: 1.4;
     word-break: keep-all;
 }
 
-/* 카드 클릭 시 상세 정보 모달[cite: 12] */
+/* 카드 클릭 시 상세 정보 모달 */
 .member-modal {
     position: fixed;
     inset: 0;
@@ -222,7 +222,7 @@
 }
 
 /* 태블릿·모바일 반응형 */
-@media (max-width: 860px) {
+@media (max-width: 960px) {
     .members-page {
         align-items: flex-start;
         padding: 32px 20px 108px;
