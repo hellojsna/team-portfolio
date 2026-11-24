@@ -20,7 +20,7 @@
     word-break: keep-all;
 }
 
-html {
+html * {
     /* 별도 서체 지정하지 않은 모든 요소의 기본 서체 Pretendard GOV로 지정 */
     font-family: "Pretendard GOV", sans-serif;
 }
@@ -38,6 +38,13 @@ a {
     /* 기본적인 요소들의 margin padding 초기화 */
     margin: 0;
     padding: 0;
+}
+
+/* 페이지 제목. 크기는 여기서 정하고, 색은 각 페이지 CSS에서 지정. */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 /* 하단 고정 메뉴바 영역. 메뉴는 js/nav.js로 삽입. */
