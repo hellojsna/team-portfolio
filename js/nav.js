@@ -10,7 +10,7 @@
 
 const navMenus = [
     { name: "메인", href: "index.html", color: "#5278E8" },
-    { name: "팀 소개", href: "team.html", color: "#48B99B" },
+    { name: "팀 소개", href: "about.html", color: "#48B99B" },
     { name: "프로필", href: "profile.html", color: "#A18AE8" },
     { name: "갤러리", href: "gallery.html", color: "#F08B86" },
     { name: "활동", href: "activity.html", color: "#E5B64F" },
