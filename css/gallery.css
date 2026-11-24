@@ -15,7 +15,6 @@
 }
 
 body {
-    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
     min-height: 100vh;
@@ -35,13 +34,6 @@ body {
 /* 페이지 제목 */
 .gallery-header {
     margin-bottom: 45px;
-}
-
-.gallery-header .category {
-    color: var(--text-sub);
-    font-size: 13px;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
 }
 
 .gallery-header h1 {
