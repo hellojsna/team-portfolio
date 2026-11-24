@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>작품 검색 | Team Portfolio</title>
+    <style>
+        @import url("./css/common.css");
+        @import url("./css/search.css");
+    </style>
+</head>
+
+<body>
+    <main class="search-page">
+        <div class="search-container">
+            <header class="search-header">
+                <h1 class="search-title">작품 검색</h1>
+                <p class="search-subtitle">프로젝트 제목, 학번·이름, 소개, 기술 스택으로 검색해 보세요.</p>
+            </header>
+
+            <!-- 검색 창 -->
+            <form class="search-bar" id="searchForm" role="search">
+                <div class="search-input-wrap">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        class="search-input"
+                        placeholder="검색어를 입력하세요 (예: 토스트, 도서관, Unity, 양한세...)"
+                        autocomplete="off"
+                        aria-label="작품 검색어 입력"
+                    >
+                    <button type="button" class="search-clear-btn" id="clearBtn" aria-label="검색어 지우기">✕</button>
+                </div>
+                <button type="submit" class="search-submit-btn">검색</button>
+            </form>
+
+            <!-- 기술 스택 빠른 필터 버튼 -->
+            <div class="tech-filter-bar" id="techFilterBar" aria-label="기술 스택 필터">
+                <!-- js/search.js에서 자동 생성 -->
+            </div>
+
+            <!-- 검색 결과 개수 안내 -->
+            <div class="search-meta">
+                <span id="resultCount">전체 작품: 6건</span>
+            </div>
+
+            <!-- gallery.js가 카드를 렌더링하는 영역 -->
+            <section class="gallery-grid" id="galleryGrid" aria-live="polite"></section>
+
+            <!-- 검색 결과 없을 때 표시 -->
+            <div class="search-empty" id="searchEmpty" hidden>
+                일치하는 작품이 없습니다. 다른 키워드나 기술 스택으로 검색해 보세요.
+            </div>
+        </div>
+    </main>
+
+    <!-- gallery.js의 openModal()과 연결되는 상세 모달 -->
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button type="button" class="close-btn" id="closeBtn" aria-label="모달 닫기">✕</button>
+            <div class="modal-header">
+                <span class="modal-number" id="modalNumber"></span>
+                <h2 class="modal-title" id="modalTitle"></h2>
+            </div>
+            <div class="modal-image-wrap">
+                <img src="" alt="프로젝트 대표 이미지" id="modalImage">
+            </div>
+            <div class="modal-body">
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="modal-section">
+                    <h3>기획 의도 및 소개</h3>
+                    <p id="modalIntro"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>주요 기능</h3>
+                    <pre id="modalFeatures"></pre>
+                </div>
+                <div class="modal-section">
+                    <h3>기술 스택</h3>
+                    <div class="modal-tech" id="modalTech"></div>
+                </div>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="modal-link" id="modalLink">
+                    사이트 방문하기 →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navigation"></nav>
+    <script src="js/nav.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>
