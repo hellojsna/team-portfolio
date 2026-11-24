@@ -40,6 +40,13 @@ a {
     padding: 0;
 }
 
+/* 페이지 제목. 크기는 여기서 정하고, 색은 각 페이지 CSS에서 지정. */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
 /* 하단 고정 메뉴바 영역. 메뉴는 js/nav.js로 삽입. */
 .navigation {
     position: fixed;

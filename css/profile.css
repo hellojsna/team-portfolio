@@ -19,11 +19,8 @@
     gap: 24px;
 }
 
-.members-title {
-    font-size: clamp(1.35rem, 2vw, 1.7rem);
-    font-weight: 700;
+h1 {
     color: #a18ae8;
-    letter-spacing: -0.02em;
 }
 
 /* 4명 기준 4열 그리드 */

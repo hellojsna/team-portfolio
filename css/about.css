@@ -18,12 +18,8 @@
     flex-direction: column;
 }
 
-.about-page-label {
-    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
-    font-weight: 700;
+h1 {
     color: #48b99b;
-    letter-spacing: -0.02em;
-    margin-bottom: 32px;
 }
 
 .about-hero-center {
