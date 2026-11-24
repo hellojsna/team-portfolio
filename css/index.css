@@ -1,0 +1,301 @@
+/*
+    index.css
+    team-portfolio
+
+    Created by Js Na on 2026/11/1.
+
+    index.html에 적용되는 스타일시트.
+*/
+
+body {
+    padding: 0 5vw;
+    background: #000;
+    color: #fff;
+}
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    align-content: center;
+}
+
+.hero h1 {
+    font-family: "HakgyoansimWooju", sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.045em;
+    word-break: keep-all;
+}
+
+.changing-word {
+    display: inline-grid;
+    min-width: 2em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.changing-word span {
+    grid-area: 1 / 1;
+    font-family: "Pretendard GOV", sans-serif;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(25%);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.changing-word span.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ctrl + S: 가운데 정렬. 커서가 광원이 되어 커서 근처 키 표면이 밝아지고, 커서 방향으로 살짝 기울어지도록 구현 (js/index.js) */
+.ctrl {
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    padding: 100px 0;
+    text-align: center;
+    /* 위아래를 비워 하단 메뉴바에 가려지지 않게 */
+}
+
+.ctrl h1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.ctrl .key {
+    --size: clamp(7rem, 20vw, 16rem);
+    width: var(--size);
+}
+
+/* 키보드 Ctrl키 */
+.ctrl .key:first-child {
+    --rx: 10deg;
+    --ry: 14deg;
+    margin-top: clamp(1rem, 3vw, 2rem);
+}
+
+/* 키보드 S키 */
+.ctrl .key:last-child {
+    --rx: -10deg;
+    --ry: -14deg;
+}
+
+.ctrl .face {
+    position: relative;
+    display: block;
+    transform: perspective(700px) rotateX(calc(var(--rx) + var(--dy, 0deg))) rotateY(calc(var(--ry) + var(--dx, 0deg)));
+    transition: transform 0.2s ease-out;
+}
+
+.ctrl .face img {
+    display: block;
+    width: 100%;
+}
+
+.ctrl .face::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle calc(var(--size) * 0.9) at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+    mask-size: 100% 100%;
+    opacity: var(--lit, 0);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.ctrl .key:first-child .face::after {
+    mask-image: url("../images/Keyboard-control.png");
+}
+
+.ctrl .key:last-child .face::after {
+    mask-image: url("../images/Keyboard-S.png");
+}
+
+.ctrl p {
+    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+/* COLOR: 스크롤하면 사각형이 지나가며 회색 글자에 색을 칠하도록 구현 (js/index.js) */
+.paint {
+    height: 300vh;
+    /* 이 높이만큼 스크롤하는 동안 .paint-stage가 스크롤되지 않고 화면에 고정 */
+}
+
+.paint-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    align-content: center;
+}
+
+.paint-word {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    overflow: hidden;
+    font-size: clamp(5rem, 20vw, 18rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.paint-word [data-color] {
+    color: #BFC0BF;
+}
+
+.paint-word [data-color].painted {
+    color: var(--color);
+}
+
+.paint-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0.9em;
+    background: #fff;
+    transform: translateX(-100%);
+}
+
+.paint-text {
+    margin-top: 2rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+    line-height: 1.8;
+    word-break: keep-all;
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.paint.done .paint-text {
+    opacity: 1;
+    transform: none;
+}
+
+.pages {
+    padding: 20vh 0 120px;
+    /* 하단 메뉴바에 가려지지 않게 */
+}
+
+.pages li + li {
+    margin-top: 3rem;
+}
+
+.pages a {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+.pages .name {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.pages .desc {
+    display: flex;
+    align-items: center;
+    color: #9a9a9a;
+    font-size: 1.25rem;
+}
+
+/* 링크에 커서를 올리면 그 페이지의 테마 색(--color)으로 화살표 표시 */
+.pages .desc::after {
+    content: "→";
+    margin-left: 1rem;
+    color: var(--color);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0;
+    transform: translateX(-0.5rem);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.pages a:hover .desc::after,
+.pages a:focus-visible .desc::after {
+    opacity: 1;
+    transform: none;
+}
+
+/* 스크롤해서 요소가 화면에 들어오면 표시 */
+.reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 6vw;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .pages a {
+        grid-template-columns: 1fr;
+        row-gap: 0.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .changing-word span {
+        transition: none;
+    }
+
+    .ctrl .face {
+        transition: none;
+    }
+
+    .paint {
+        height: auto;
+    }
+
+    .paint-stage {
+        position: static;
+    }
+
+    .paint-text {
+        transition: none;
+    }
+
+    .pages .desc::after {
+        transform: none;
+        transition: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
