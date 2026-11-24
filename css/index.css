@@ -8,7 +8,9 @@
 */
 
 body {
-    padding: 0 5vw;
+    --page-padding: 5vw;
+    /* common.css의 공통 푸터가 이 padding을 뚫고 화면 끝까지 채워지도록 변수로 지정 */
+    padding: 0 var(--page-padding);
     background: #000;
     color: #fff;
 }
@@ -254,7 +256,7 @@ body {
 
 @media (max-width: 600px) {
     body {
-        padding: 0 6vw;
+        --page-padding: 6vw;
     }
 
     .hero h1 {

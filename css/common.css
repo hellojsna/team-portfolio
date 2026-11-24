@@ -74,6 +74,94 @@ a {
     /* 탭별 고유 색상은 nav.js에서 지정. */
 }
 
+/* 공통 푸터. js/nav.js로 삽입.
+   body에 좌우 padding이 있는 페이지는 body에 같은 값을 --page-padding으로 지정하면
+   푸터가 화면 끝까지 채워짐. */
+.common-footer {
+    margin: 0 calc(var(--page-padding, 0px) * -1);
+    padding: 4rem 5vw calc(80px + 2rem);
+    /* 아래쪽은 하단 메뉴바(80px)에 가려지지 않게 */
+    background: #0B0A12 url("../images/FooterBG.jpg") center bottom / cover no-repeat;
+    color: #FFFFFF;
+}
+
+/* 팀명과 저작권(왼쪽), 연락처 목록(오른쪽) */
+.common-footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.common-footer-title {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.common-footer-copy {
+    margin-top: 1.5rem;
+    color: #BFC0BF;
+    font-size: 0.875rem;
+}
+
+.common-footer-links li + li {
+    margin-top: 1.5rem;
+}
+
+.common-footer-row {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    align-items: baseline;
+    color: inherit;
+    text-decoration: none;
+}
+
+.common-footer-label {
+    color: #BFC0BF;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.common-footer-value {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    overflow-wrap: anywhere;
+}
+
+/* 링크에 커서를 올리면 화살표 표시 (메인 페이지의 페이지 링크와 같은 방식) */
+.common-footer-action .common-footer-value::after {
+    content: "→";
+    margin-left: 0.75rem;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateX(-0.5rem);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.common-footer-action:hover .common-footer-value::after,
+.common-footer-action:focus-visible .common-footer-value::after {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 800px) {
+    .common-footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 하단 메뉴바에 가려지지 않게 하는 아래쪽 여백은 공통 푸터가 맡음.
+   페이지마다 body 아래에 여백을 따로 주면 푸터가 메뉴바에 가려지는 정도가 달라지므로,
+   푸터 아래에는 여백을 두지 않음. (페이지 CSS보다 우선하도록 !important) */
+body {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 /* 커스텀 커서 표시를 위해 기본 커서 숨기기.
    링크·버튼은 브라우저가, 갤러리 카드 등은 페이지 CSS가 cursor를 따로 지정하므로
    모든 요소에 !important로 적용. (600px 이하는 커스텀 커서를 안 쓰므로 제외) */
@@ -124,6 +212,11 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
     .custom-cursor {
+        transition: none;
+    }
+
+    .common-footer-action .common-footer-value::after {
+        transform: none;
         transition: none;
     }
 }
