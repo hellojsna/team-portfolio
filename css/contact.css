@@ -1,0 +1,259 @@
+
+/* =================================
+   CONTACT FOOTER
+================================= */
+
+.contact-footer {
+    width: 100%;
+    padding: 65px 8% 25px;
+    background-color: #171717;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.contact-footer * {
+    box-sizing: border-box;
+}
+
+.contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* 왼쪽 제목 */
+
+.contact-subtitle {
+    display: block;
+    color: #999999;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.contact-title {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.contact-description {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* 오른쪽 연락처 */
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 25px 45px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.contact-label {
+    color: #888888;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.contact-item:hover {
+    color: #9db4ff;
+}
+
+/* 문의하기 버튼 */
+
+.contact-inquiry-button {
+    border: none;
+    background: none;
+    color: #ffffff;
+    padding: 0;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+.contact-inquiry-button:hover {
+    color: #9db4ff;
+}
+
+/* Footer 하단 */
+
+.contact-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #383838;
+    text-align: center;
+}
+
+.contact-bottom p {
+    color: #777777;
+    font-size: 12px;
+}
+
+/* =================================
+   INQUIRY MODAL
+================================= */
+
+.inquiry-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.inquiry-modal.active {
+    display: flex;
+}
+
+.inquiry-box {
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px;
+    background: #ffffff;
+    color: #222222;
+    border-radius: 18px;
+    position: relative;
+}
+
+.inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.inquiry-header h2 {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.inquiry-close {
+    border: none;
+    background: none;
+    font-size: 27px;
+    cursor: pointer;
+    color: #555555;
+}
+
+.inquiry-description {
+    color: #777777;
+    font-size: 13px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* 입력 영역 */
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.inquiry-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inquiry-field label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.inquiry-field input,
+.inquiry-field textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: #ffffff;
+    color: #222222;
+}
+
+.inquiry-field input:focus,
+.inquiry-field textarea:focus {
+    border-color: #555555;
+}
+
+.inquiry-field textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.inquiry-submit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #171717;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.inquiry-submit:hover {
+    background: #444444;
+}
+
+/* 모바일 반응형 */
+
+@media (max-width: 650px) {
+    .contact-footer {
+        padding: 45px 7% 25px;
+    }
+
+    .contact-inner {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .contact-title {
+        font-size: 30px;
+    }
+
+    .contact-links {
+        width: 100%;
+        gap: 25px 20px;
+    }
+
+    .contact-bottom {
+        margin-top: 35px;
+    }
+
+    .inquiry-box {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+}
