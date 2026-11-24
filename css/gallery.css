@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard GOV', 'Noto Sans KR', sans-serif;
     background: var(--bg-main);
     color: var(--text-main);
     min-height: 100vh;
